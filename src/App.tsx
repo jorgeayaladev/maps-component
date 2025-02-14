@@ -26,14 +26,12 @@ function App() {
             subdomains: ["mt0", "mt1", "mt2", "mt3"],
           }).addTo(myMap)
 
-          marker([-11.919355, -77.054338])
+          marker([latitude, longitude])
             .addTo(myMap)
             .bindPopup("A pretty CSS popup.<br> Easily customizable.")
             .openPopup()
 
           console.log(position.coords)
-
-          //-11.919355, -77.054338
 
           setInfo({
             latitude,
@@ -62,8 +60,8 @@ function App() {
   }, [])
 
   return (
-    <div className="grid grid-cols-2 h-screen">
-      <div className="p-4 grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 h-screen">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="p-4 bg-cyan-200 rounded-lg">
           <h1 className="text-center font-bold text-xl">Mi ubicación</h1>
           <ul>
@@ -76,9 +74,6 @@ function App() {
             <li>Velocidad: {info.speed}</li>
           </ul>
         </div>
-        <div className="p-4 bg-cyan-200 rounded-lg">hola</div>
-        <div className="p-4 bg-cyan-200 rounded-lg">hola</div>
-        <div className="p-4 bg-cyan-200 rounded-lg">hola</div>
       </div>
       <div id="map" className="h-full"></div>
     </div>
